@@ -434,6 +434,61 @@
   font-weight: 600;
 }
 
+/* Password Field with Toggle and Copy */
+.password-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.password-field strong {
+  flex-shrink: 0;
+}
+
+.password-value {
+  font-family: var(--mono);
+  color: var(--text-h);
+  letter-spacing: 2px;
+  min-width: 80px;
+  font-size: 14px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: var(--accent-red-bg);
+  color: var(--accent-red);
+}
+
+.icon-btn:active {
+  transform: scale(0.95);
+}
+
+.copy-btn {
+  position: relative;
+}
+
+.copy-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.copy-btn:hover svg {
+  transform: scale(1.1);
+}
+
 /* Mission Section */
 .mission {
   background: var(--accent-bg);
