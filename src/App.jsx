@@ -1,11 +1,72 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  
+  // Set your password here
+  const CORRECT_PASSWORD = 'tfc2026'
+
+  // Check if user is already authenticated on mount
+  useEffect(() => {
+    const authStatus = localStorage.getItem('isAuthenticated')
+    if (authStatus === 'true') {
+      setIsAuthenticated(true)
+    }
+  }, [])
+
+  const handlePasswordSubmit = (e) => {
+    e.preventDefault()
+    if (password === CORRECT_PASSWORD) {
+      setIsAuthenticated(true)
+      localStorage.setItem('isAuthenticated', 'true')
+      setError('')
+    } else {
+      setError('Incorrect password. Please try again.')
+      setPassword('')
+    }
+  }
+
+  const handleLogout = () => {
+    setIsAuthenticated(false)
+    localStorage.removeItem('isAuthenticated')
+    setPassword('')
+  }
 
   const toggleSidebar = () => {
     setSidebarCollapsed(!sidebarCollapsed)
+  }
+
+  // Show password page if not authenticated
+  if (!isAuthenticated) {
+    return (
+      <div className="password-page">
+        <div className="password-container">
+          <div className="password-card">
+            <img src="/tfc-logo.png" alt="TFC Logo" className="password-logo" />
+            <h1>Welcome</h1>
+            <p>Please enter the password to access this page</p>
+            <form onSubmit={handlePasswordSubmit}>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter password"
+                className="password-input"
+                autoFocus
+              />
+              {error && <p className="error-message">{error}</p>}
+              <button type="submit" className="password-submit">
+                Enter
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -39,6 +100,9 @@ function App() {
                 <line x1="3" y1="6" x2="21" y2="6"></line>
                 <line x1="3" y1="18" x2="21" y2="18"></line>
               </svg>
+            </button>
+            <button className="logout-btn" onClick={handleLogout} aria-label="Logout">
+              Logout
             </button>
           </div>
           
