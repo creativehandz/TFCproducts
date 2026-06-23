@@ -182,36 +182,48 @@ function App() {
               <div className="services-grid">
                 <div className="service-card">
                   <h3>Kuantan188 Ticket Management</h3>
-                  <p>
-                    Frontend  : https://tickets.tfcmockup.com/
-                  </p>
-                  <p>
-                    Backend : https://admin.tfcmockup.com/login
-                  </p>
-                  <p>Username: admin@kuantan188.com</p>
-                  <p>Password: admin123</p>
+                  <div className="card-buttons">
+                    <a href="https://tickets.tfcmockup.com/" target="_blank" rel="noopener noreferrer" className="card-btn frontend-btn">
+                      Frontend
+                    </a>
+                    <a href="https://admin.tfcmockup.com/login" target="_blank" rel="noopener noreferrer" className="card-btn backend-btn">
+                      Backend
+                    </a>
+                  </div>
+                  <div className="card-credentials">
+                    <p><strong>Username:</strong> admin@kuantan188.com</p>
+                    <p><strong>Password:</strong> admin123</p>
+                  </div>
                 </div>
                 <div className="service-card">
                   <h3>Clevdex AI chatbot</h3>
-                  <p>
-                    Frontend  : https://clevdex.com/
-                  </p>
-                  <p>
-                    Backend : https://company.clevdex.com/login
-                  </p>
-                  <p>Username: kuantan@tfcmockup.com</p>
-                  <p>Password: Momilu@99</p>
+                  <div className="card-buttons">
+                    <a href="https://clevdex.com/" target="_blank" rel="noopener noreferrer" className="card-btn frontend-btn">
+                      Frontend
+                    </a>
+                    <a href="https://company.clevdex.com/login" target="_blank" rel="noopener noreferrer" className="card-btn backend-btn">
+                      Backend
+                    </a>
+                  </div>
+                  <div className="card-credentials">
+                    <p><strong>Username:</strong> kuantan@tfcmockup.com</p>
+                    <p><strong>Password:</strong> Momilu@99</p>
+                  </div>
                 </div>
                 <div className="service-card">
                   <h3>Restaurant Table Management</h3>
-                  <p>
-                    Frontend  : https://rafw.tfcmockup.com/
-                  </p>
-                  <p>
-                    Backend : https://rafw.tfcmockup.com/admin
-                  </p>
-                  <p>Username: prasharpranav@gmail.com</p>
-                  <p>Password: :qcDS=G5</p>
+                  <div className="card-buttons">
+                    <a href="https://rafw.tfcmockup.com/" target="_blank" rel="noopener noreferrer" className="card-btn frontend-btn">
+                      Frontend
+                    </a>
+                    <a href="https://rafw.tfcmockup.com/admin" target="_blank" rel="noopener noreferrer" className="card-btn backend-btn">
+                      Backend
+                    </a>
+                  </div>
+                  <div className="card-credentials">
+                    <p><strong>Username:</strong> prasharpranav@gmail.com</p>
+                    <p><strong>Password:</strong> :qcDS=G5</p>
+                  </div>
                 </div>
               </div>
             </div>

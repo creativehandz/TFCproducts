@@ -369,6 +369,71 @@
   margin: 0 0 5px 0;
 }
 
+/* Card Buttons */
+.card-buttons {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.card-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-family: 'Roboto Slab', serif;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.frontend-btn {
+  background: var(--accent-red);
+  color: #fff;
+  border: 2px solid var(--accent-red);
+}
+
+.frontend-btn:hover {
+  background: #a0152e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(192, 23, 55, 0.3);
+}
+
+.backend-btn {
+  background: transparent;
+  color: var(--accent-red);
+  border: 2px solid var(--accent-red);
+}
+
+.backend-btn:hover {
+  background: var(--accent-red);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(192, 23, 55, 0.3);
+}
+
+/* Card Credentials */
+.card-credentials {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.card-credentials p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.card-credentials strong {
+  color: var(--text-h);
+  font-weight: 600;
+}
+
 /* Mission Section */
 .mission {
   background: var(--accent-bg);
@@ -539,6 +604,14 @@
     gap: 20px;
   }
 
+  .card-buttons {
+    flex-direction: column;
+  }
+
+  .card-btn {
+    min-width: 100%;
+  }
+
   .sidebar-header {
     padding: 0 20px 15px;
   }
@@ -565,7 +638,7 @@
 }
 
 .password-card {
-  background: var(--bg);
+  background: var(--bg-black);
   border: 2px solid var(--border);
   border-radius: 12px;
   padding: 50px 40px;
@@ -581,13 +654,13 @@
 
 .password-card h1 {
   font-size: 32px;
-  color: var(--text-h);
+  color: var(--text-w);
   margin: 0 0 10px;
   font-family: 'Roboto Slab', serif;
 }
 
 .password-card p {
-  color: var(--text);
+  color: var(--text-w);
   margin-bottom: 30px;
   font-size: 16px;
 }
