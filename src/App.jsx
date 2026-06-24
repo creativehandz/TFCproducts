@@ -96,7 +96,7 @@ function App() {
       <div className="password-page">
         <div className="password-container">
           <div className="password-card">
-            <img src="/tfc-logo.png" alt="TFC Logo" className="password-logo" />
+            <img src="/Primary_Logo_White.webp" alt="TFC Logo" className="password-logo" />
             <h1>Welcome</h1>
             <p>Please enter the password to access this page</p>
             <form onSubmit={handlePasswordSubmit}>
@@ -126,7 +126,7 @@ function App() {
         {/* Left Sidebar */}
         <aside className={`sidebar ${sidebarCollapsed ? 'collapsed' : ''}`}>
           <div className="sidebar-logo">
-            <img src="/tfc-logo.png" alt="TFC Products Logo" className="logo" />
+            <img src="/Primary_Logo_White.webp" alt="TFC Products Logo" className="logo" />
           </div>
           <div className="sidebar-header">
             <h3>Menu</h3>
