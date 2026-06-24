@@ -1,5 +1,20 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import * as Sentry from "@sentry/react"
+
+// Error button component to test Sentry's error tracking
+function ErrorButton() {
+  return (
+    <button
+      className="hero-button sentry-test-btn"
+      onClick={() => {
+        throw new Error('This is your first error!');
+      }}
+    >
+      🧪 Test Sentry (Break the world)
+    </button>
+  );
+}
 
 function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
@@ -177,7 +192,9 @@ function App() {
                 <p className="hero-description">
                   Transform the way you work with innovative AI applications, automation platforms, and business tools developed by TheFaceCraft to increase efficiency, productivity, and customer engagement.
                 </p>
-                
+                <div style={{ marginTop: '20px' }}>
+                  <ErrorButton />
+                </div>
               </div>
               <div className="hero-image">
                 <img src="/digital.png" alt="TFC Products" />

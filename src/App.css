@@ -296,6 +296,21 @@
   box-shadow: var(--shadow);
 }
 
+/* Sentry Test Button */
+.sentry-test-btn {
+  background: #f59e0b;
+  border-color: #f59e0b;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 24px;
+}
+
+.sentry-test-btn:hover {
+  background: #d97706;
+  border-color: #d97706;
+  color: #fff;
+}
+
 /* Sections */
 .section {
   padding: 80px 60px;
