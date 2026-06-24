@@ -4,12 +4,22 @@ import * as Sentry from "@sentry/react"
 
 // Error button component to test Sentry's error tracking
 function ErrorButton() {
+  const handleClick = () => {
+    // Manually send error to Sentry
+    Sentry.captureException(new Error('This is your first error!'));
+    
+    // Also throw to see it in console
+    setTimeout(() => {
+      throw new Error('This is your first error!');
+    }, 100);
+    
+    alert('Error sent to Sentry! Check your Sentry dashboard.\n\n(CORS errors in console are normal and don\'t prevent tracking)');
+  };
+
   return (
     <button
       className="hero-button sentry-test-btn"
-      onClick={() => {
-        throw new Error('This is your first error!');
-      }}
+      onClick={handleClick}
     >
       🧪 Test Sentry (Break the world)
     </button>
