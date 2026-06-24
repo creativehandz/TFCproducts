@@ -6,7 +6,7 @@ import * as Sentry from "@sentry/react"
 
 // Initialize Sentry
 Sentry.init({
-  dsn: "https://beb339a7ed1ccd2a268d494d8a97ff92@c451161921191968.ingest.de.sentry.io/4511619223978864",
+  dsn: "https://0eb339a7ed1ccd2a268d494d8a97ff92@o4511619211919360.ingest.de.sentry.io/4511619223978064",
   integrations: [
     Sentry.browserTracingIntegration(),
     Sentry.replayIntegration(),
