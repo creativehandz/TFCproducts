@@ -233,7 +233,18 @@ function App() {
               <h2>Our Products & Services</h2>
               <div className="services-grid">
                 <div className="service-card">
-                  <h3>Kuantan188 Ticket Management</h3>
+                  <h3>Real Estate Portal</h3>
+                  <div className="card-buttons">
+                    <a href="https://realestateportal.thefacecraft.com/" target="_blank" rel="noopener noreferrer" className="card-btn frontend-btn">
+                      Frontend
+                    </a>
+                    
+                  </div>
+                  
+                </div>
+
+                <div className="service-card">
+                  <h3>Booking & Ticketing System</h3>
                   <div className="card-buttons">
                     <a href="https://tickets.tfcmockup.com/" target="_blank" rel="noopener noreferrer" className="card-btn frontend-btn">
                       Frontend
@@ -285,61 +296,9 @@ function App() {
                     </div>
                   </div>
                 </div>
+                
                 <div className="service-card">
-                  <h3>Clevdex AI chatbot</h3>
-                  <div className="card-buttons">
-                    <a href="https://clevdex.com/" target="_blank" rel="noopener noreferrer" className="card-btn frontend-btn">
-                      Frontend
-                    </a>
-                    <a href="https://company.clevdex.com/login" target="_blank" rel="noopener noreferrer" className="card-btn backend-btn">
-                      Backend
-                    </a>
-                  </div>
-                  <div className="card-credentials">
-                    <p><strong>Username:</strong> kuantan@tfcmockup.com</p>
-                    <div className="password-field">
-                      <strong>Password:</strong>
-                      <span className="password-value">
-                        {visiblePasswords.clevdex ? 'Momilu@99' : '••••••••'}
-                      </span>
-                      <button 
-                        className="icon-btn" 
-                        onClick={() => togglePasswordVisibility('clevdex')}
-                        aria-label="Toggle password visibility"
-                      >
-                        {visiblePasswords.clevdex ? (
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
-                            <line x1="1" y1="1" x2="23" y2="23"></line>
-                          </svg>
-                        ) : (
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                          </svg>
-                        )}
-                      </button>
-                      <button 
-                        className="icon-btn copy-btn" 
-                        onClick={() => copyToClipboard('Momilu@99', 'clevdex')}
-                        aria-label="Copy password"
-                      >
-                        {copiedPassword === 'clevdex' ? (
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                          </svg>
-                        ) : (
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                          </svg>
-                        )}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div className="service-card">
-                  <h3>Restaurant Table Management</h3>
+                  <h3>Restaurant Reservation System</h3>
                   <div className="card-buttons">
                     <a href="https://rafw.tfcmockup.com/" target="_blank" rel="noopener noreferrer" className="card-btn frontend-btn">
                       Frontend
