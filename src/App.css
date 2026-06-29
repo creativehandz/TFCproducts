@@ -1144,14 +1144,53 @@ body{
   
 }
 .header-content, .hero-content {
-    padding: 0 20px;
+    padding: 0 60px;
 }
 .section.contact{
   margin: 0 40px;
+  padding: 80px 80px;
 }
 .footer {
     padding: 30px 40px;
     
+}
+.hero-text-wrapper{
+      max-width: 674px;
+}
+.hero-section h1{
+  font-size: 80px;
+    
+}
+.tagline{
+  font-size: 24px;
+}
+.section h2{
+  font-size: 60px;
+}
+.section p{
+  font-size: 20px;
+}
+.about-right {
+       width: 674px;
+    max-width: 674px;
+}
+.about-text-wrapper, .about-container{
+  justify-content: flex-start;
+  gap: 0px;
+}
+.about-left{
+      width: 590px;
+}
+.section.about::before{
+    width: 35%;
+}
+.service-card h3{
+  font-size: 24px;
+    line-height: 28px;
+    padding: 0 80px;
+}
+.section.contact .col{
+  margin-bottom:0;
 }
 }
 
