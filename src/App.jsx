@@ -3,6 +3,8 @@ import './App.css'
 import * as Sentry from "@sentry/react"
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Lenis from 'lenis'
+import 'lenis/dist/lenis.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -35,6 +37,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [visiblePasswords, setVisiblePasswords] = useState({
     kuantan188: false,
     clevdex: false,
@@ -42,7 +45,9 @@ function App() {
     ecommerce: false
   })
   const [copiedPassword, setCopiedPassword] = useState('')
+  const aboutFirstParasRef = useRef(null)
   const aboutSecondParasRef = useRef(null)
+  const aboutSectionRef = useRef(null)
   
   // Set your password here
   const CORRECT_PASSWORD = 'tfc2026'
@@ -55,31 +60,76 @@ function App() {
     }
   }, [])
 
-  // GSAP Scroll Animation for About Section
+  // Initialize Lenis Smooth Scroll with GSAP integration
   useEffect(() => {
-    if (isAuthenticated && aboutSecondParasRef.current) {
-      gsap.fromTo(
-        aboutSecondParasRef.current,
-        {
-          opacity: 0,
-          y: 50,
-          visibility: 'hidden'
-        },
-        {
-          opacity: 1,
-          y: 0,
-          visibility: 'visible',
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: aboutSecondParasRef.current,
-            start: 'top 80%',
-            end: 'top 50%',
-            scrub: 1,
-            toggleActions: 'play none none reverse'
-          }
-        }
-      )
+    const lenis = new Lenis({
+      duration: 1,
+    smoothWheel: true,
+    wheelMultiplier: 0.8,
+    touchMultiplier: 1.5,
+    })
+
+    // Sync Lenis with GSAP ScrollTrigger
+    lenis.on('scroll', ScrollTrigger.update)
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000)
+    })
+
+    gsap.ticker.lagSmoothing(0)
+
+    return () => {
+      lenis.destroy()
+    }
+  }, [])
+
+  // GSAP Scroll Animation for About Section - Two-part transition
+  useEffect(() => {
+    if (isAuthenticated && aboutFirstParasRef.current && aboutSecondParasRef.current && aboutSectionRef.current) {
+      // Create a timeline for the about section
+     const tl = gsap.timeline({
+    scrollTrigger: {
+         trigger: aboutSectionRef.current,
+    start: "top top",
+    end: "+=120%",
+    pin: true,
+    scrub: 0.5,
+    anticipatePin: 1
+    }
+      })
+
+      // Initially set first paragraphs visible and second paragraphs hidden
+      gsap.set(aboutFirstParasRef.current, { opacity: 1, y: 0 })
+      gsap.set(aboutSecondParasRef.current, { opacity: 0, y: 60 })
+
+      // Animate: fade out first paragraphs while fading in second paragraphs
+      tl
+.to(aboutFirstParasRef.current, {
+    y: -300,
+    duration: 2
+})
+
+.to(aboutFirstParasRef.current, {
+    opacity: 0,
+    duration: 1
+})
+
+.fromTo(
+    aboutSecondParasRef.current,
+    {
+        y: 120,
+        opacity: 0
+    },
+    {
+        y: 0,
+        opacity: 1,
+        duration: 2
+    }
+); // '<' makes it start at the same time as previous animation
+
+      return () => {
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+      }
     }
   }, [isAuthenticated])
 
@@ -164,6 +214,8 @@ function App() {
               <div className="header-logo">
                 <img src="/Primary_Logo_White.webp" alt="TFC Products Logo" />
               </div>
+              
+              {/* Desktop Navigation */}
               <nav className="header-nav">
                 <a href="#home" className="active">Home</a>
                 <a href="#about">About</a>
@@ -171,8 +223,29 @@ function App() {
                 <a href="#contact">Contact</a>
                 <button className="logout-btn" onClick={handleLogout}>Logout</button>
               </nav>
+              
+              {/* Mobile Menu Button */}
+              <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
             </div>
           </div>
+          
+          {/* Mobile Drawer */}
+          <div className={`mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+            <nav className="mobile-nav">
+              <a href="#home" onClick={() => setMobileMenuOpen(false)}>Home</a>
+              <a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a>
+              <a href="#products" onClick={() => setMobileMenuOpen(false)}>Products</a>
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+              <button className="logout-btn" onClick={handleLogout}>Logout</button>
+            </nav>
+          </div>
+          
+          {/* Mobile Overlay */}
+          {mobileMenuOpen && <div className="mobile-overlay" onClick={() => setMobileMenuOpen(false)}></div>}
         </header>
 
         {/* Hero Section */}
@@ -194,23 +267,39 @@ function App() {
       {/* Main Content Area */}
       <main className="content-area">
         {/* About Section */}
-        <section className="section about" id="about">
+        <section className="section about" id="about" ref={aboutSectionRef}>
           <div className="container">
-            <h2>About Us</h2>
-            <div className="about-text-wrapper">
-              <div className="about-first-paras">
+            <div className="about-container ">
+              
+              <div className="about-left">
+                  <h2>About Us</h2>
+              </div>
+
+              <div className="about-right">
+
+                  <div class="about-slider">
+
+                    <div className="about-first-paras" ref={aboutFirstParasRef}>
                 <p>
-                  At TheFaceCraft, we build innovative digital products that help businesses work smarter, grow faster, and stay ahead in an ever-evolving digital world. Our mission is to transform complex business challenges into simple, scalable, and user-friendly technology solutions.
+                  At TheFaceCraft, we build innovative digital products that help businesses work smarter, grow faster, and stay ahead in an ever-evolving digital world. <span class="red-text">Our mission</span> is to transform complex business challenges into <span class="red-text">simple, scalable, and user-friendly technology solutions.</span>
                 </p>
                 <p>We specialize in developing modern software products, AI-powered applications, automation tools, and custom digital solutions that enhance productivity, streamline operations, and improve customer experiences. By combining technical expertise with a deep understanding of business needs, we create products that deliver measurable value and long-term impact.</p>
               </div>
-              <div className="about-second-paras" ref={aboutSecondParasRef}>
+                               <div className="about-second-paras" ref={aboutSecondParasRef}>
                 <p>
                   Our team is passionate about innovation, quality, and continuous improvement. Every product we build is designed with performance, scalability, and usability in mind, ensuring that businesses of all sizes can leverage technology to achieve their goals.
                 </p>
                 <p>Whether it's artificial intelligence, workflow automation, customer engagement platforms, or custom business software, TheFaceCraft is committed to creating digital products that empower organizations to innovate, scale, and succeed in the digital age.</p>
               </div>
-            </div>
+                  </div>
+                    
+                    
+
+              </div>
+
+          </div>
+            
+            
           </div>
         </section>
 
@@ -279,7 +368,7 @@ function App() {
                 
                 <div className="col">
                 <div className="service-card">
-                  <h3>Restaurant Reservation System</h3>
+                  <h3>Real Estate Portal</h3>
                   <div className="card-buttons">
                     <a href="https://rafw.tfcmockup.com/" target="_blank" rel="noopener noreferrer" className="card-btn frontend-btn">
                       Frontend
@@ -409,17 +498,29 @@ function App() {
 
           {/* Contact Section */}
           <section className="section contact" id="contact">
-            <div className="main-content">
-              <h2>Get In Touch</h2>
-              <div className="contact-info">
-                <div className="contact-item">
-                  <strong>Email:</strong> info@thefacecraft.com
+            <div className="container">
+              <div className="col">
+                <div className="contact-left">
+                  <img src="/Primary_Logo_White.webp" alt="FaceCraft Logo" className="contact-logo" />
+                  <h2>WE CRAFT<br/>DIGITAL<br/>SOLUTIONS</h2>
                 </div>
-                <div className="contact-item">
-                  <strong>Phone:</strong> +41 76 715 23 36
-                </div>
-                <div className="contact-item">
-                  <strong>Address:</strong> Grossmatte O 24B, 6014 Luzern, Switzerland
+              </div>
+              <div className="col">
+                <div className="contact-right">
+                  <div className="contact-item">
+                    yusri@thefacecraft.com
+                  </div>
+                  <div className="contact-item">
+                    +60 13-286 5798
+                  </div>
+                  <div className="contact-item">
+                    Switzerland | Malaysia
+                  </div>
+                  <div className="contact-social">
+                    <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Youtube</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -427,7 +528,16 @@ function App() {
 
           {/* Footer */}
           <footer className="footer">
-            <p>&copy; 2026 FaceCraft GmbH. All rights reserved.</p>
+            <div className="container">
+              <div className="footer-col-left">
+                <a href="#">TC</a>
+                <a href="#">Privacy</a>
+              </div>
+              
+              <div className="footer-col-right">
+                &copy; 2026 FaceCraft GmbH. All rights reserved.
+              </div>
+            </div>
           </footer>
         </main>
     </div>
