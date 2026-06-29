@@ -885,6 +885,14 @@ span.red-text{
   font-size: 14px;
   font-family: 'Futura', 'Century Gothic', 'Montserrat', sans-serif;
 }
+.section.contact a{
+  color:#fff;
+   text-decoration: none;
+}
+.section.contact a:hover{
+  color: var(--accent-red);
+  text-decoration: underline;
+}
 
 .footer .container {
   display: flex;

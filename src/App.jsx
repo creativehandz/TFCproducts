@@ -529,18 +529,18 @@ function App() {
               <div className="col">
                 <div className="contact-right">
                   <div className="contact-item">
-                    yusri@thefacecraft.com
+                    <a href="mailto:yusri@thefacecraft.com">yusri@thefacecraft.com</a>
                   </div>
                   <div className="contact-item">
-                    +60 13-286 5798
+                    <a href="tel:+60132865798">+60 13-286 5798</a>
                   </div>
                   <div className="contact-item">
-                    Switzerland | Malaysia
+                    <a href="https://share.google/mCC1qkbvygFoSSmZk">Switzerland</a> | Malaysia
                   </div>
                   <div className="contact-social">
-                    <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">Youtube</a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.linkedin.com/company/thefacecraft/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Youtube</a>
                   </div>
                 </div>
               </div>
