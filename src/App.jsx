@@ -312,7 +312,7 @@ function App() {
               </h2>
               <div className="services-grid">
                 <div className="col">
-                <div className="service-card">
+                <div className="service-card" style={{ background: '#838384' }}>
                   <h3>
                     Booking & Ticketing System
                     <svg className="card-title-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -322,15 +322,21 @@ function App() {
                   <div className="card-buttons">
                     <a href="https://tickets.tfcmockup.com/" target="_blank" rel="noopener noreferrer" className="card-btn frontend-btn">
                       Frontend
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '8px' }}>
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                     </a>
                     <a href="https://admin.tfcmockup.com/login" target="_blank" rel="noopener noreferrer" className="card-btn backend-btn">
                       Backend
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '8px' }}>
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                     </a>
                   </div>
                   <div className="card-credentials">
-                    <p><strong>Username:</strong> admin@kuantan188.com</p>
+                    <p>Username:<strong> admin@kuantan188.com</strong></p>
                     <div className="password-field">
-                      <strong>Password:</strong>
+                      Password:
                       <span className="password-value">
                         {visiblePasswords.kuantan188 ? 'admin123' : '••••••••'}
                       </span>
@@ -373,7 +379,7 @@ function App() {
                 </div>
                 
                 <div className="col">
-                <div className="service-card">
+                <div className="service-card" style={{ background: '#201F1F' }}>
                   <h3>
                     Real Estate <br></br>Portal
                     <svg className="card-title-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -383,15 +389,21 @@ function App() {
                   <div className="card-buttons">
                     <a href="https://qhomesfrontend.tfcmockup.com" target="_blank" rel="noopener noreferrer" className="card-btn frontend-btn">
                       Frontend
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '8px' }}>
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                     </a>
                     <a href="https://qhomesbackend.tfcmockup.com/admin" target="_blank" rel="noopener noreferrer" className="card-btn backend-btn">
                       Backend
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '8px' }}>
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                     </a>
                   </div>
                   <div className="card-credentials">
-                    <p><strong>Username:</strong> prasharpranav@gmail.com</p>
-                    <div className="password-field">
-                      <strong>Password:</strong>
+                    <p class="text-white">Username:<strong> prasharpranav@gmail.com</strong></p>
+                    <div className="password-field password-field-text-white">
+                      Password:
                       <span className="password-value">
                         {visiblePasswords.restaurant ? ':qcDS=G5' : '••••••••'}
                       </span>
@@ -401,12 +413,12 @@ function App() {
                         aria-label="Toggle password visibility"
                       >
                         {visiblePasswords.restaurant ? (
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff" stroke="currentColor" strokeWidth="2">
                             <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
                             <line x1="1" y1="1" x2="23" y2="23"></line>
                           </svg>
                         ) : (
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff" stroke="currentColor" strokeWidth="2">
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                             <circle cx="12" cy="12" r="3"></circle>
                           </svg>
@@ -418,11 +430,11 @@ function App() {
                         aria-label="Copy password"
                       >
                         {copiedPassword === 'restaurant' ? (
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff" stroke="currentColor" strokeWidth="2">
                             <polyline points="20 6 9 17 4 12"></polyline>
                           </svg>
                         ) : (
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff" stroke="currentColor" strokeWidth="2">
                             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                           </svg>
@@ -434,7 +446,7 @@ function App() {
                 </div>
 
                 <div className="col">
-                <div className="service-card">
+                <div className="service-card" style={{ background: '#201F1F' }}>
                   <h3>
                     Restaurant Reservation System
                     <svg className="card-title-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -444,15 +456,21 @@ function App() {
                   <div className="card-buttons">
                     <a href="#" target="_blank" rel="noopener noreferrer" className="card-btn frontend-btn">
                       Frontend
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '8px' }}>
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                     </a>
                     <a href="#" target="_blank" rel="noopener noreferrer" className="card-btn backend-btn">
                       Backend
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '8px' }}>
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                     </a>
                   </div>
                   <div className="card-credentials">
-                    <p><strong>Username:</strong> demo@ecommerce.com</p>
-                    <div className="password-field">
-                      <strong>Password:</strong>
+                    <p class="text-white">Username:<strong> demo@ecommerce.com</strong></p>
+                    <div className="password-field password-field-text-white">
+                      Password:
                       <span className="password-value">
                         {visiblePasswords.ecommerce ? 'demo123' : '••••••••'}
                       </span>
@@ -495,9 +513,9 @@ function App() {
                 </div>
 
                 <div className="col">
-                <div className="service-card">
+                <div className="service-card" style={{ background: '#0A0A0A' }}>
                   <h3>
-                    Real Estate Website
+                    Real Estate <br />Website
                     <svg className="card-title-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
@@ -505,6 +523,9 @@ function App() {
                   <div className="card-buttons">
                     <a href="https://realestateportal.thefacecraft.com/" target="_blank" rel="noopener noreferrer" className="card-btn frontend-btn">
                       Frontend
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '8px' }}>
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                     </a>
                     
                   </div>
@@ -535,12 +556,12 @@ function App() {
                     <a href="tel:+60132865798">+60 13-286 5798</a>
                   </div>
                   <div className="contact-item">
-                    <a href="https://share.google/mCC1qkbvygFoSSmZk">Switzerland</a> | Malaysia
+                    <a href="https://share.google/mCC1qkbvygFoSSmZk" target="_blank">Switzerland</a> | <a href="https://share.google/I0d6hJNyvWr1QxugT" target="_blank" rel="noopener noreferrer">Malaysia</a>
                   </div>
                   <div className="contact-social">
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.instagram.com/thefacecraftstudio/" target="_blank" rel="noopener noreferrer">Instagram</a>
                     <a href="https://www.linkedin.com/company/thefacecraft/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Youtube</a>
+                    <a href="https://www.facebook.com/thefacecraftstudio/" target="_blank" rel="noopener noreferrer">Facebook</a>
                   </div>
                 </div>
               </div>
