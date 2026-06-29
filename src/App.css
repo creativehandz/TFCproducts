@@ -494,6 +494,30 @@ span.red-text{
   text-align: center;
 }
 
+.section-title-with-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.title-arrow {
+  color: var(--accent-red);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
 .about-text-wrapper, .about-container {
  display:flex;
     align-items:center;
@@ -610,6 +634,15 @@ span.red-text{
    font-weight:normal;
    line-height: 1.2;
        padding: 0 39px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 50px;
+}
+
+.card-title-arrow {
+  color: var(--accent-red);
+  animation: bounce 2s infinite;
 }
 
 .service-card:hover h3 {
@@ -633,6 +666,8 @@ span.red-text{
   opacity: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+
+  padding: 0 39px;
 }
 
 .service-card:hover .card-buttons {
@@ -642,17 +677,17 @@ span.red-text{
 
 .card-btn {
   flex: 1;
-  min-width: 120px;
-  padding: 12px 24px;
-  font-size: 15px;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  font-family: 'Roboto Slab', serif;
-  cursor: pointer;
-  display: inline-block;
+    min-width: auto;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    font-family: 'Roboto Slab', serif;
+    cursor: pointer;
+    display: inline-block;
 }
 
 .frontend-btn {
@@ -690,7 +725,8 @@ span.red-text{
   overflow: hidden;
   transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease, padding 0.3s ease;
   text-align: center;
-  padding: 0 39px;
+  padding: 0 50px;
+  
 }
 
 .service-card:hover .card-credentials {
@@ -1021,15 +1057,9 @@ span.red-text{
     display: flex;
   }
 
-  .footer .container {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
 
-  .footer-col-right {
-    text-align: center;
-  }
+
+
 }
 
 /* Password Protection Page */
