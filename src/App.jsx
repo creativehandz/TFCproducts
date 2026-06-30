@@ -468,11 +468,11 @@ function App() {
                     </a>
                   </div>
                   <div className="card-credentials">
-                    <p class="text-white">Username:<strong> prasharpranav@gmail.com</strong></p>
+                    <p class="text-white">Username:<strong> yusri@thefacecraft.com</strong></p>
                     <div className="password-field password-field-text-white">
                       Password:
                       <span className="password-value">
-                        {visiblePasswords.ecommerce ? ':qcDS=G5' : '••••••••'}
+                        {visiblePasswords.ecommerce ? 'Rafw@2026!Secure#Admin' : '••••••••'}
                       </span>
                       <button 
                         className="icon-btn" 
