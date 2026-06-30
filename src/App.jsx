@@ -426,7 +426,7 @@ function App() {
                       </button>
                       <button 
                         className="icon-btn copy-btn" 
-                        onClick={() => copyToClipboard(':qcDS=G5', 'restaurant')}
+                        onClick={() => copyToClipboard('admin123', 'restaurant')}
                         aria-label="Copy password"
                       >
                         {copiedPassword === 'restaurant' ? (
