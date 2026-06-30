@@ -116,7 +116,7 @@ html {
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  font-family: 'Futura', 'Century Gothic', 'Montserrat', sans-serif;
+  font-family: 'Futura PT Book', sans-serif;
   transition: color 0.3s ease;
 }
 
@@ -173,7 +173,7 @@ html {
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
-  font-family: 'Futura', 'Century Gothic', 'Montserrat', sans-serif;
+  font-family: 'Futura PT Book', sans-serif;
   transition: color 0.3s ease;
   padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -420,7 +420,7 @@ html {
   color: #ffffff;
   max-width: 800px;
   margin: 0 0 0 auto;
-  font-family: 'Futura', 'Century Gothic', 'Montserrat', sans-serif;
+  font-family: 'Futura PT Book', sans-serif;
   font-weight: 300;
 }
 
@@ -436,7 +436,7 @@ html {
   color: #ffffff;
   letter-spacing: 2px;
   font-weight: 400;
- font-family: 'Futura PT Medium';
+  font-family: 'Futura PT Book', sans-serif;
   line-height: 1.1;
   text-transform: uppercase;
   
@@ -452,7 +452,7 @@ html {
   margin-bottom: 30px;
   text-transform: none;
   letter-spacing: 0.5px;
-  font-family: 'Futura', 'Century Gothic', 'Montserrat', sans-serif;
+  font-family: 'Futura PT Book', sans-serif;
 }
 
 .hero-description {
@@ -578,7 +578,7 @@ span.red-text{
   text-align: left;
   position: relative;
   padding-bottom: 15px;
-  font-family: 'Futura', 'Century Gothic', 'Montserrat', sans-serif;
+  font-family: 'Futura PT Book';
   text-transform: uppercase;
 }
 
@@ -725,7 +725,7 @@ span.red-text{
   margin-bottom: 0;
   color: var(--text-w);
   transition: margin-bottom 0.3s ease;
-   font-family: 'Futura', 'Century Gothic', 'Montserrat', sans-serif;
+   font-family: 'Futura PT Book';
    text-align: center;
    font-weight:500;
    line-height: 48px;
@@ -948,7 +948,7 @@ p.text-white, p.text-white strong, .password-field-text-white , .password-field-
   color: #ffffff;
   text-align: left;
   padding: 0;
-  font-family: 'Futura', 'Century Gothic', 'Montserrat', sans-serif;
+  font-family: 'Futura PT Book';
 }
 
 .contact-right {
@@ -970,7 +970,7 @@ p.text-white, p.text-white strong, .password-field-text-white , .password-field-
 .contact-item {
   font-size: 18px;
   color: #ffffff;
-  font-family: 'Futura', 'Century Gothic', 'Montserrat', sans-serif;
+ font-family: 'Futura PT Book';
 }
 
 .contact-social {
@@ -984,7 +984,7 @@ p.text-white, p.text-white strong, .password-field-text-white , .password-field-
   color: #ffffff;
   text-decoration: none;
   font-size: 16px;
-  font-family: 'Futura', 'Century Gothic', 'Montserrat', sans-serif;
+  font-family: 'Futura PT Book';
   transition: color 0.3s ease;
 }
 
@@ -998,7 +998,7 @@ p.text-white, p.text-white strong, .password-field-text-white , .password-field-
   background: #ffffff;
   color: #000000;
   font-size: 14px;
-  font-family: 'Futura', 'Century Gothic', 'Montserrat', sans-serif;
+  font-family: 'Futura PT Book';
 }
 .section.contact a{
   color:#fff;
@@ -1175,7 +1175,7 @@ p.text-white, p.text-white strong, .password-field-text-white , .password-field-
   cursor: pointer;
   transition: all 0.3s ease;
   margin-left: auto;
-  font-family: 'Futura', 'Century Gothic', 'Montserrat', sans-serif;
+  font-family: 'Futura PT Book', sans-serif;
 }
 
 .logout-btn:hover {
