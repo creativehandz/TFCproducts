@@ -454,13 +454,13 @@ function App() {
                     </svg>
                   </h3>
                   <div className="card-buttons">
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="card-btn frontend-btn">
+                    <a href="https://rafw.tfcmockup.com/" target="_blank" rel="noopener noreferrer" className="card-btn frontend-btn">
                       Frontend
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '8px' }}>
                         <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="card-btn backend-btn">
+                    <a href="https://rafw.tfcmockup.com/admin/#" target="_blank" rel="noopener noreferrer" className="card-btn backend-btn">
                       Backend
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '8px' }}>
                         <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -468,11 +468,11 @@ function App() {
                     </a>
                   </div>
                   <div className="card-credentials">
-                    <p class="text-white">Username:<strong> demo@ecommerce.com</strong></p>
+                    <p class="text-white">Username:<strong> prasharpranav@gmail.com</strong></p>
                     <div className="password-field password-field-text-white">
                       Password:
                       <span className="password-value">
-                        {visiblePasswords.ecommerce ? 'demo123' : '••••••••'}
+                        {visiblePasswords.ecommerce ? ':qcDS=G5' : '••••••••'}
                       </span>
                       <button 
                         className="icon-btn" 
