@@ -335,11 +335,11 @@ function App() {
                     </a>
                   </div>
                   <div className="card-credentials">
-                    <p>Username:<strong> admin@kuantan188.com</strong></p>
+                    <p>Username:<strong> yusri@thefacecraft.com</strong></p>
                     <div className="password-field">
                       Password:
                       <span className="password-value">
-                        {visiblePasswords.kuantan188 ? 'admin123' : '••••••••'}
+                        {visiblePasswords.kuantan188 ? 'TFC@yusri2026' : '••••••••'}
                       </span>
                       <button 
                         className="icon-btn" 
@@ -360,7 +360,7 @@ function App() {
                       </button>
                       <button 
                         className="icon-btn copy-btn" 
-                        onClick={() => copyToClipboard('admin123', 'kuantan188')}
+                        onClick={() => copyToClipboard('TFC@yusri2026', 'kuantan188')}
                         aria-label="Copy password"
                       >
                         {copiedPassword === 'kuantan188' ? (
