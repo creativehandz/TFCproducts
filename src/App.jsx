@@ -307,7 +307,7 @@ function App() {
           <section className="section services" id="products">
             <div className="container container-sm  ">
               <h2 className="section-title-with-arrow">
-                Products Demo
+                Product Demo
                 
               </h2>
               <div className="services-grid">
