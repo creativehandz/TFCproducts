@@ -401,11 +401,11 @@ function App() {
                     </a>
                   </div>
                   <div className="card-credentials">
-                    <p class="text-white">Username:<strong> prasharpranav@gmail.com</strong></p>
+                    <p class="text-white">Username:<strong> admin@qhomes.com</strong></p>
                     <div className="password-field password-field-text-white">
                       Password:
                       <span className="password-value">
-                        {visiblePasswords.restaurant ? ':qcDS=G5' : '••••••••'}
+                        {visiblePasswords.restaurant ? 'admin123' : '••••••••'}
                       </span>
                       <button 
                         className="icon-btn" 
